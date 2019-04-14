@@ -1,0 +1,24 @@
+<div class="container mt-3">
+  <form action="/restaurants/{{rst.id}}" method="POST">
+    <div class="row justify-content-around mb-3">
+      <input class="puts col-4" type="text" placeholder="餐廳名字" name="name" value="{{rst.name}}">
+      <input class="puts col-4" type="text" placeholder="料理類別" name="category" value="{{rst.category}}">
+    </div>
+    <div class="row justify-content-between mb-3">
+      <input class="puts col-6" type="text" placeholder="圖片網址" name="image" value="{{rst.image}}">
+      <input class="puts col-4" type="text" placeholder="Google地圖網址" name="google_map" value="{{rs.google_map}}">
+    </div>
+    <div class="row justify-content-between mb-3">
+      <input class="puts col-2" type="text" placeholder="電話" name="phone" value="{{rst.phone}}">
+      <input class="puts col-4" type="text" placeholder="地址" name="location" value="{{rst.location}}">
+      <input class="puts col-2" type="text" placeholder="評價" name="rating" value="{{rst.rating}}">
+    </div>
+    <div class="row mb-3">
+      <input class="puts col-12" type="text" placeholder="描述" name="description" value="{{rst.description}}">
+    </div>
+    <div class="row mb-3">
+      <button class="puts col-2" type="submit">上傳</button>
+      <span class="puts col-1 ml-auto"><a href="/">回到首頁</a></span>
+    </div>
+  </form>
+</div>
