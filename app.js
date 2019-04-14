@@ -130,11 +130,19 @@ app.post('/restaurants/:id/delete', (req, res) => {
 
 app.get('/search', (req, res) => {
   const keyword = req.query.keyword
-  const rstSearch = rstModels.filter(rst => {
-    return rst.name.toLowerCase().includes(keyword.toLowerCase())
+  rstModels.find((err, rsts) => {
+    if (err) return console.log(err)
+    const rstSearchResults = rsts.filter(
+      rst => rst.name.toLowerCase()
+        .includes(keyword.toLowerCase()) ||
+        rst.category.toLowerCase()
+          .includes(keyword.toLowerCase())
+    )
+    res.render('index', { rst: rstSearchResults })
   })
-  res.render('index', { rst: rstSearch })
 })
+
+
 //listen to  and start server
 app.listen(port, () => {
   console.log(`Express is running  on http://localhost:${port}`)
