@@ -20,8 +20,25 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col-md-10 col-12 mx-auto">
-      <div class="mt-2 mb-3">
-        <h2 class='text-warning'><a class='text-warning' href="/restaurants/new">新增一家餐廳進入名單</a></h2>
+      <div class="row justify-content-between">
+        <div class=" mt-2 mb-3">
+          <h2 class='text-warning'><a class='text-warning' href="/restaurants/new">新增一家餐廳進入名單</a></h2>
+        </div>
+        <div>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              排序
+            </button>
+            <div class=" dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="/sortByName">店名</a>
+              <a class="dropdown-item" href="/sortByCategory">類別</a>
+              <a class="dropdown-item" href="/sortBylocation">地區</a>
+              <a class="dropdown-item" href="/sortByRate">評價</a>
+
+            </div>
+          </div>
+        </div>
       </div>
       <div class="card-columns">
         {{#each rst}}
@@ -48,7 +65,7 @@
                 <div class="btn btn-danger mr-1 ">
                   <a class="text-white" href="/restaurants/{{this.id}}">詳細資料</a>
                 </div>
-                <form class='mr-1' action="/restaurants/{{this.id}}/delete" method="POST">
+                <form class='mr-1' action="/restaurants/{{this.id}}/delete?_method=DELETE" method="POST">
                   <button type="submit" class="btn btn-danger">刪除</button>
                 </form>
               </div>
