@@ -1,14 +1,15 @@
-# AC-proj-restaurant-website
+# 你的私藏餐廳
 
 ## User Story
 ```
-1.首頁顯示所有restaurant
-2.點選restaurant,進入詳細介紹分頁
-3.用search的方式尋找restaurant
+1.畫面呈現所有私藏的餐廳
+2.使用者可用餐廳名稱 地區 與評價來排列餐廳順序
+3.使用者可點選餐廳,進入個別詳細資料頁面
+4.使用者可用餐廳名稱與類別來搜尋餐廳
+5.使用者可點"新增一家餐廳進入名單" 來新增餐廳
+6.使用者可點選個別餐廳的編輯紐，進行編輯
+7.使用者可點選各邊餐廳的刪除按鈕，刪除此餐廳
+
 ```
 
-## 技術
-```
-1.node.js 的 express套件 建立 localhost server
-2.handlebars套件  做 route
-```
+
