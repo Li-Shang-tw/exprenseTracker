@@ -17,24 +17,29 @@
   <link rel="stylesheet" href="/stylesheets/style.css">
 
 
+
 </head>
 
 <body>
   <header>
     <!-- navigation -->
+    <nav class="navbar navbar-dark bg-danger justify-content-between">
 
-    <nav class="navbar navbar-light bg-light">
-      <div class="container">
-        <div class="row">
-          <div class="col-3">
-            <a class="navbar-brand " href="/">
-              <img src="https://i.postimg.cc/JG2gFgJg/logo.png" width="30" height="30" class="d-inline-block align-top"
-                alt="我的餐廳清單">
-              我的私藏餐廳
-            </a>
-          </div>
+      <a class="navbar-brand  ml-5" href="/">
+        <h2>我的私藏餐廳</h2>
+      </a>
+
+      <form action="/search">
+        <div class="input-group">
+          <input type="text" name="keyword" value="{{keyword}}" class="form-control" placeholder="輸入餐廳、分類"
+            aria-label="Restaurant Name..." value="" aria-describedby="search-button">
+          <button class="btn btn-major" type="submit" id="search-button"><i class="fas fa-search"></i></button>
         </div>
-      </div>
+      </form>
+    </nav>
+
+
+
 
     </nav>
 

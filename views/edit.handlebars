@@ -1,24 +1,72 @@
-<div class="container mt-3">
+<div class="container mt-5">
   <form action="/restaurants/{{rst.id}}?_method=PUT" method="POST">
-    <div class="row justify-content-around mb-3">
-      <input class="puts col-4" type="text" placeholder="餐廳名字" name="name" value="{{rst.name}}">
-      <input class="puts col-4" type="text" placeholder="料理類別" name="category" value="{{rst.category}}">
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">餐廳名字</label>
+      <div class="col-10">
+        <input class=" pcol-4" type="text" placeholder="餐廳名字" name="name" value="{{rst.name}}" required>
+      </div>
     </div>
-    <div class="row justify-content-between mb-3">
-      <input class="puts col-6" type="text" placeholder="圖片網址" name="image" value="{{rst.image}}">
-      <input class="puts col-4" type="text" placeholder="Google地圖網址" name="google_map" value="{{rs.google_map}}">
+
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">餐聽類別</label>
+      <div class="col-10">
+        <input class="col-4" type="text" placeholder="料理類別" name="category" value="{{rst.category}}" required>
+      </div>
     </div>
-    <div class="row justify-content-between mb-3">
-      <input class="puts col-2" type="text" placeholder="電話" name="phone" value="{{rst.phone}}">
-      <input class="puts col-4" type="text" placeholder="地址" name="location" value="{{rst.location}}">
-      <input class="puts col-2" type="text" placeholder="評價" name="rating" value="{{rst.rating}}">
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">圖片網址</label>
+      <div class="col-10">
+        <input class=" col-6" type="text" placeholder="圖片網址" name="image" value="{{rst.image}}" required>
+      </div>
     </div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Google地圖網址</label>
+      <div class="col-10">
+        <input class=" col-7" type="text" placeholder="Google地圖網址" name="google_map" value="{{rs.google_map}}" required>
+      </div>
+    </div>
+
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">餐廳地址</label>
+      <div class="col-10">
+        <input class="puts col-4" type="text" placeholder="地址" name="location" value="{{rst.location}}" required>
+      </div>
+    </div>
+
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">餐廳電話</label>
+      <div class="col-10">
+        <input class="puts col-2" type="text" placeholder="電話" name="phone" value="{{rst.phone}}" required>
+      </div>
+    </div>
+
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">評價</label>
+      <div class="col-10">
+        <input class="puts col-2" type="text" placeholder="評價" name="rating" value="{{rst.rating}}" required>
+      </div>
+    </div>
+
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">描述</label>
+      <div class="col-10">
+        <input class="puts col-12" type="texture" placeholder="描述" name="description" value="{{rst.description}}"
+          required>
+      </div>
+    </div>
+
+    <!--button-->
     <div class="row mb-3">
-      <input class="puts col-12" type="text" placeholder="描述" name="description" value="{{rst.description}}">
-    </div>
-    <div class="row mb-3">
-      <button class="puts col-2" type="submit">上傳</button>
-      <span class="puts col-1 ml-auto"><a href="/">回到首頁</a></span>
+      <button class="btn btn-success ml-2 mt-3" type="submit">上傳</button>
+      <span class="puts col-1 ml-auto"><a href="/">Back</a></span>
     </div>
   </form>
 </div>

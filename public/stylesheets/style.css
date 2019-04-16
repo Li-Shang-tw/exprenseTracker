@@ -1,10 +1,14 @@
+
 header {
   overflow: hidden;
 }
 
 .navbar .navbar-brand {
-  color: #4592af;
+  color: #e6b800;
+  font-family: Microsoft JhengHei;
 }
+
+
 
 .navbar .navbar-brand:hover {
   color: #226089;
@@ -78,6 +82,7 @@ header {
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
+
 @media screen and (max-width: 992px) {
   
   .card img{
@@ -99,3 +104,6 @@ header {
   }
   
 }
+
+
+
