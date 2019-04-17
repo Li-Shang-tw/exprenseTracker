@@ -11,16 +11,7 @@ router.get('/new', (req, res) => {
 
 //create的行為
 router.post('/', (req, res) => {
-  const restaurant = rstModels({
-    name: req.body.name,
-    category: req.body.category,
-    image: req.body.image,
-    location: req.body.location,
-    phone: req.body.phone,
-    google_map: req.body.google_map,
-    rating: req.body.rating,
-    description: req.body.description,
-  })
+  const restaurant = rstModels(req.body )
 
   restaurant.save(err => {
     if (err) return console.error(err)
@@ -50,18 +41,11 @@ router.get('/:id/edit', (req, res) => {
 //Edit行為
 
 router.put('/:id', (req, res) => {
-  rstModels.findById(req.params.id, (err, rst) => {
+  rstModels.findById(req.params.id, (err,restaurant) => {
     if (err) return console.error(err)
     //將目標資料的內容全部指定為表單的填入值
-    rst.name = req.body.name
-    rst.name_en = req.body.name_en
-    rst.category = req.body.category
-    rst.image = req.body.image
-    rst.location = req.body.location
-    rst.phone = req.body.phone
-    rst.google_map = req.body.google_map
-    rst.rating = req.body.rating
-    rst.description = req.body.description
+    //Object.assign is available for passing req.body to mongodb since there is no other unwanted params in this case.
+    Object.assign(restaurant, req.body)
     rst.save(err => {
       if (err) return console.error(err)
       return res.redirect(`/restaurants/${req.params.id}`)
