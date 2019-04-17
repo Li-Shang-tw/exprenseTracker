@@ -6,10 +6,12 @@ const app = express()
 const port = 3000
 const exphbs = require('express-handlebars')  //導入handlebars
 const mongoose = require('mongoose')   // 載入 mongoose
-const rstModels = require('./models/resturantWeb') //導入models
+const restauranttModels = require('./models/restaurant') //導入models
 const bodyParser = require('body-parser') // 引用 body-parser
 const methodOverride = require('method-override')
 const router = express.Router()
+
+
 
 
 
@@ -50,10 +52,11 @@ app.use(express.static('public'))
 //home
 app.use('/', require('./routes/home'))
 //restaurants
-app.use('/restaurants', require('./routes/restaurantWeb'))
+app.use('/restaurants', require('./routes/restaurant'))
 //search
-app.use('/', require('./routes/searchAndSort'))
-
+app.use('/search', require('./routes/search'))
+//sort
+app.use('/sort', require('./routes/sort'))
 
 
 
