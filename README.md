@@ -2,7 +2,7 @@
 建立餐廳清單，來私藏你喜歡的餐廳
 # 介面影像
 首頁
-![image](https://github.com/Li-Shang-tw/RestaurantWeb/blob/master/%E6%96%B0%E5%A2%9E.JPG )
+![image](https://github.com/Li-Shang-tw/RestaurantWeb/blob/master/%E9%A6%96%E9%A0%81.JPG )
 詳情
 ![image](https://github.com/Li-Shang-tw/RestaurantWeb/blob/master/%E8%A9%B3%E6%83%85.JPG )
 新增
