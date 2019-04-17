@@ -44,7 +44,6 @@ router.put('/:id', (req, res) => {
   rstModels.findById(req.params.id, (err,restaurant) => {
     if (err) return console.error(err)
     //將目標資料的內容全部指定為表單的填入值
-    //Object.assign is available for passing req.body to mongodb since there is no other unwanted params in this case.
     Object.assign(restaurant, req.body)
     rst.save(err => {
       if (err) return console.error(err)
