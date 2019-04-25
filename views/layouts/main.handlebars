@@ -28,7 +28,11 @@
       <a class="navbar-brand  ml-5" href="/">
         <h2>我的私藏餐廳</h2>
       </a>
-
+      {{#if isAuthenticated }}
+      <a href="/users/logout" class="btn btn-outline-light">Logout</a>
+      {{else}}
+      <a href="/users/login" class="btn btn-outline-light">Login</a>
+      {{/if}}
       <form action="/search">
         <div class="input-group">
           <input type="text" name="keyword" value="{{keyword}}" class="form-control" placeholder="輸入餐廳、分類"

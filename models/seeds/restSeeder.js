@@ -1,7 +1,9 @@
 const mongoose = require('mongoose')
-const Rest = require('../resturantWeb')
+const Rest = require('../restaurant')
+const User = require('../user')
 
 const restJson = require('../../restaurant.json')
+const userJson = require('../../user.json')
 
 
 //mongoose連線到database
@@ -18,7 +20,34 @@ db.once('open', () => {
 })
 
 //建立seeds
+const userList = userJson.results
 const restJsonList = restJson.results //是array
+let n = 0
+userList.forEach(user => {
+  let newUser = User(user)
+  for (i = n; i < n + 3; i++) {
+
+    Rest.create({
+      name: restJsonList[i].name,
+      name_en: restJsonList[i].name_en,
+      category: restJsonList[i].category,
+      image: restJsonList[i].image,
+      location: restJsonList[i].location,
+      phone: restJsonList[i].phone,
+      google_map: restJsonList[i].google_map,
+      rating: restJsonList[i].rating,
+      description: restJsonList[i].description,
+      userId: newUser._id
+
+    })
+  }
+  n += 1
+}
+
+)
+
+
+/*const restJsonList = restJson.results //是array
 
 restJsonList.forEach(element => {
   Rest.create({
@@ -34,4 +63,4 @@ restJsonList.forEach(element => {
     description: element.description
   })
   console.log('done')
-});
+});*/
