@@ -1,67 +1,74 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col-md-10 col-12 mx-auto">
-      <div class="row ">
-        <div class=" mt-2 mb-3 mr-auto">
-          <h2 class='text-warning'><a class='text-warning' style='font-weight: bold'>餐廳名單</a></h2>
-        </div>
-
-
-        <div class="add " style:"display:inline">
-          <a href="/restaurants/new"><button class="btn btn-success">新增</button></a>
-        </div>
-
+      <div class="row  justify-content-center">
         <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="month" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
-            排序
+            月份
           </button>
-          <div class=" dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+          <div class=" dropdown-menu dropdown-menu-right" aria-labelledby="month">
             <a class="dropdown-item " href="/sort/name"> 店名 </a>
+            <a class="dropdown-item " href="/sort/category">類別</a>
+            <a class="dropdown-item " href="/sort/location">地區</a>
+            <a class="dropdown-item " href="/sort/rating">評價</a>
+          </div>
+
+        </div>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="category" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            種類
+          </button>
+          <div class=" dropdown-menu dropdown-menu-right" aria-labelledby="category">
+            <a class="dropdown-item " href="/sort/name"> name </a>
             <a class="dropdown-item " href="/sort/category">類別</a>
             <a class="dropdown-item " href="/sort/location">地區</a>
             <a class="dropdown-item " href="/sort/rating">評價</a>
 
           </div>
+
+
         </div>
 
       </div>
 
-      <div class="card-columns">
-        {{#each restaurant}}
+      <div class="record">
+        {{#each record}}
+        <div class="row">
 
-        <div class="card mb-3">
-          <img class="card-img-top " src="{{this.image}}" alt="{{this.name}}">
-          <div class="card-body p-3">
-            <h6 class="card-title mb-1">{{this.name}}</h6>
+          <div class="col">
+            <div class="row justify-content-between">
+              <div class="item">
 
-            <div class="restaurant-category mb-1">
-              <i class="fas fa-utensils pr-2"></i> {{this.category}}
+                <div class="itemContext d-inline ">
+                  <h3>{{this.name}}</h3>
+                  <span>{{this.date}}</span>
+                </div>
+              </div>
+              <divclass+"amount">{{this.amount}}
+            </div>
+          </div>
+          <div class="col">
+
+            <div class="btn btn-danger mr-1  ">
+              <a class="text-white" href="/restaurants/{{this.id}}/edit">
+                編輯</a>
             </div>
 
-            <span class="badge badge-pill badge-danger font-weight-normal">
-              {{this.rating}}
-              <i class="fas fa-star fa-xs"></i>
-            </span>
+            <form class='mr-1 d-inline' action="/restaurants/{{this.id}}/delete?_method=DELETE" method="POST">
+              <button type="submit" class="btn btn-danger  ">刪除</button>
+            </form>
 
-            <div class=" row justify-content-end  mt-3">
-              <div class="btn btn-danger mr-1 ">
-                <a class="text-white" href="/restaurants/{{this.id}}/edit">
-                  編輯</a>
-              </div>
-              <div class="btn btn-danger mr-1 ">
-                <a class="text-white" href="/restaurants/{{this.id}}">詳細資料</a>
-              </div>
-              <form class='mr-1' action="/restaurants/{{this.id}}/delete?_method=DELETE" method="POST">
-                <button type="submit" class="btn btn-danger">刪除</button>
-              </form>
-            </div>
 
           </div>
         </div>
-
         {{/each}}
+      </div>
+      <div class="add " style:"display:inline">
+        <a href="/record/new"><button class="btn btn-success">新增</button></a>
       </div>
     </div>
   </div>
+</div>
 </div>

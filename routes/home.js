@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const rstModels = require('../models/restaurant') //導入models
+const Record = require('../models/Record') //導入models
 // 載入 auth middleware
 const { authenticated } = require('../config/auth')
 
@@ -8,10 +8,10 @@ const { authenticated } = require('../config/auth')
 //home router
 
 router.get('/', authenticated, (req, res) => {
-  rstModels.find({ userId: req.user._id })
-    .exec((err, rst) => {
+  Record.find({ userId: req.user._id })
+    .exec((err, record) => {
       if (err) return console.error(err)
-      return res.render('index', { rst })
+      return res.render('index', { record })
     })
 
 })

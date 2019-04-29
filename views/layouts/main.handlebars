@@ -22,33 +22,21 @@
 
 <body>
   <header>
+
     <!-- navigation -->
-    <nav class="navbar navbar-dark bg-danger justify-content-between">
-
-      <a class="navbar-brand  ml-5" href="/">
-        <h2>我的私藏餐廳</h2>
-      </a>
-      {{#if isAuthenticated }}
-      <a href="/users/logout" class="btn btn-outline-light">Logout</a>
-      {{else}}
-      <a href="/users/login" class="btn btn-outline-light">Login</a>
-      {{/if}}
-      <form action="/search">
-        <div class="input-group">
-          <input type="text" name="keyword" value="{{keyword}}" class="form-control" placeholder="輸入餐廳、分類"
-            aria-label="Restaurant Name..." value="" aria-describedby="search-button">
-          <button class="btn btn-major" type="submit" id="search-button"><i class="fas fa-search"></i></button>
-        </div>
-      </form>
+    <nav class="navbar navbar-dark bg-primary">
+      <div class="container  justify-content-between">
+        <a class="navbar-brand  ml-5" href="/">
+          <h2>家庭記帳本</h2>
+        </a>
+        {{#if isAuthenticated }}
+        <a href="/users/logout" class="btn btn-outline-light">Logout</a>
+        {{else}}
+        <a href="/users/login" class="btn btn-outline-light">Login</a>
+        {{/if}}
+      </div>
     </nav>
 
-
-
-
-    </nav>
-
-
-    <div class=" banner"></div>
   </header>
 
 

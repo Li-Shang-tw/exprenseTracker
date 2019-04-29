@@ -26,6 +26,7 @@ module.exports = passport => {
     })
   )
 
+
   passport.use(
     new FacebookStrategy({
       clientID: '410613446182431',
